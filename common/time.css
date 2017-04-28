@@ -107,7 +107,7 @@ h2 {
     box-shadow: 0px 3px 10px black;
     text-shadow: 2px 1px 0px black;
     transition: all .35s;
-    animation: fly-up .35s ease;
+    animation: fade .35s ease;
 }
 
 .twitter-icon:hover {

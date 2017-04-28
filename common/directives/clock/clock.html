@@ -3,7 +3,7 @@
     <div class="clock">
         <h1><span>{{event.daysUntil}}</span></h1>
         <h2>DAYS UNTIL</h2>
-        <h2><input class="eventInput" type="text" data-ng-change="eventChange({event : event})" data-ng-model="event.name"/></h2>
+        <h2><input class="eventInput" type="text" data-ng-blur="eventChange({event : event})" data-ng-model="event.name"/></h2>
         <h3><input class="eventInput" type="date" data-ng-change="controls.getDaysUntil()" data-ng-model="event.date"/></h3>
     </div>
 </div>
