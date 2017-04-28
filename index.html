@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="events"  ng-controller="eventsCtrl">
+    <head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css?parameter=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="common/time.css" />
+    </head>
+    <title>Event Calculator</title>
+    <body ng-cloak="">
+        <div ng-view=""></div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+    <script src="events.js"></script>
+    <script src="common/directives/clock/clock.directive.js"></script>
+    <script src="common/services/util.service.js"></script>
+    <script src="home/home.controller.js"></script>
+</html>
