@@ -14,6 +14,7 @@
         });
     }).controller('homeCtrl', ['$scope', '$location', '$routeParams', 'util',
         function($scope, $location, $routeParams, util) {
+            var fairEvent;
 
             if($routeParams.date) {
                 $scope.event = {
@@ -24,14 +25,19 @@
                 $scope.event = {
                     date : util.calculateFairDate(),
                     name : 'Fair!'
-                }
+                };
+                fairEvent = angular.copy($scope.event);
             }
 
             $scope.eventChange = function(event) {
-                if(event.name) {
-                    $location.path('/' + moment(event.date).format('MM-DD-YYYY') + '/' + event.name, false);
+                if(!angular.equals(fairEvent, {date : event.date, name : event.name})) {
+                    if(event.name) {
+                        $location.path('/' + moment(event.date).format('MM-DD-YYYY') + '/' + event.name, false);
+                    } else {
+                        $location.path('/' + moment(event.date).format('MM-DD-YYYY'), false);
+                    }
                 } else {
-                    $location.path('/' + moment(event.date).format('MM-DD-YYYY'), false);
+                    $location.path('/', false);
                 }
             }
         }
