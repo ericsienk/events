@@ -33,14 +33,14 @@
                         //calculate ballpark fair date
                         tmpFair = new Date(tmpFair.getFullYear() + addYear, 8,  1, 0,0,0,0);
 
-                        //if September falls on a Monday then it will be on the 3rd Saturday else the 4th
-                        var nthSaturday = tmpFair.getDay() === 1 ? 3 : 4;
-                        var fair =  this.nthWeekdayOfMonth(6, nthSaturday, tmpFair);
+                        //if September falls on a Monday then it will be on the 3rd Friday else the 4th
+                        var nthFriday = tmpFair.getDay() === 1 ? 3 : 4;
+                        var fair =  this.nthWeekdayOfMonth(5, nthFriday, tmpFair);
 
                         if(!addYear && moment(new Date()).isAfter(moment(fair))){
                             if(moment(new Date()).isAfter(moment(fair).add('days', 7))) {
                                 //if still same month and fair week has past, then calculate next years date
-                                var fair =  this.nthWeekdayOfMonth(6, nthSaturday, new Date(tmpFair.getFullYear() + 1, 8,  1, 0,0,0,0));
+                                var fair =  this.nthWeekdayOfMonth(5, nthFriday, new Date(tmpFair.getFullYear() + 1, 8,  1, 0,0,0,0));
                             } else {
                                 //else return todays date, so there will be zero days until fair
                                 return new Date();
